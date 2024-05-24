@@ -1,7 +1,34 @@
 # Introduction
-Bash script which have accept name of private repository and clone it in current folder.
+This Bash script accepts the name of a private repository and clones it into the current folder... because I am too lazy setting up ssh. 
 
-# Usage
-In clonme.sh add private token from your github in GITHUB_TOKEN="" and your username in YOUR_USERNAME="". After that just 'chmod +x clonme.sh' add it to /usr/bin/ and remove suffix ".sh", source your .bashrc and you are good to go.
+# Setup
+1. **Add Your GitHub Token and Username:**
+   - Open `clonme.sh` and add your private GitHub token in the `GITHUB_TOKEN` variable.
+   - Add your GitHub username in the `YOUR_USERNAME` variable.
+   ```bash
+   GITHUB_TOKEN="your_github_token_here"
+   YOUR_USERNAME="your_github_username_here"
+   ```
 
-For usage just write '''clonme "name_of_your_repository"'''
+2. **Make the Script Executable:**
+   - Change the permissions of the script to make it executable.
+  ```bash
+  chmod +x clonme.sh
+  ```
+
+ 3. **Move the Script to /usr/local/bin:**
+    - Move the script to a directory that is included in your PATH, such as /usr/local/bin, and rename it to remove the .sh suffix.
+  ```bash
+  sudo mv clonme.sh /usr/local/bin/clonme
+  ```
+
+  4. **Source Your .bashrc:**
+     - Ensure your .bashrc is sourced to update the PATH.
+  ```bash
+  source ~/.bashrc
+  ```
+# **Usage:**
+You can now use the script by simply typing:
+  ```bash
+  clonme <name_of_your_repository>
+  ```
